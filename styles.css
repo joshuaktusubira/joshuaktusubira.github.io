@@ -57,10 +57,27 @@ body {
 }
 
 .nav-logo {
-    font-size: 1.5rem;
-    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     color: var(--primary-color);
-    letter-spacing: 1px;
+}
+
+.nav-logo-img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    display: block;
+}
+
+.nav-logo-text {
+    font-family: 'Dancing Script', 'Poppins', Inter, sans-serif;
+    font-size: 1.55rem;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    text-transform: none;
+    color: var(--primary-color);
+    line-height: 1;
 }
 
 .nav-menu {
