@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="assets/flavicons/favicon2.3.png">
 </head>
@@ -15,10 +17,14 @@
     <!-- Navigation Bar -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="nav-logo">JKT</div>
+            <div class="nav-logo">
+                <img src="assets/flavicons/favicon2.3.png" alt="JKT logo" class="nav-logo-img">
+                <span class="nav-logo-text">joshuaktusubira</span>
+            </div>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#highlights" class="nav-link">Highlights</a></li>
+                <li><a href="#webgl" class="nav-link">WebGL</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#certifications" class="nav-link">Certifications</a></li>
@@ -84,7 +90,28 @@
             </div>
         </div>
     </section>
-
+ 
+    <!-- WebGL Showcase Section -->
+    <section id="webgl" class="webgl-section">
+        <div class="container">
+            <h2 class="section-title">WebGL Showcase</h2>
+            <div class="webgl-content">
+                <div class="webgl-description">
+                    <p>
+                        Explore a live WebGL demo built directly into this portfolio to demonstrate graphics programming, shader logic, and browser-based 3D rendering capabilities.
+                    </p>
+                    <p>
+                        This demo uses low-level WebGL APIs to render a smoothly animated scene without external libraries, showing how I can build performant visualizations from the ground up.
+                    </p>
+                </div>
+                <div class="webgl-demo-card">
+                    <canvas id="webgl-canvas" aria-label="WebGL demo canvas"></canvas>
+                    <div id="webgl-status" class="webgl-status">Initializing WebGL...</div>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
     <!-- Projects Section -->
     <section id="projects" class="projects-section">
         <div class="container">
@@ -110,13 +137,13 @@
                     <a href="#" class="project-link">View Project →</a>
                 </div>
                 <div class="project-card">
-                    <h3 class="project-title">Engineering Project 3</h3>
-                    <p class="project-description">A project demonstrating your expertise in a specific engineering domain.</p>
+                    <h3 class="project-title">WebGL Visualization Demo</h3>
+                    <p class="project-description">A browser-based graphics demonstration highlighting WebGL shader programming, animation, and interactive rendering performance.</p>
                     <div class="project-tags">
-                        <span class="tag">Engineering</span>
-                        <span class="tag">Research</span>
+                        <span class="tag">WebGL</span>
+                        <span class="tag">Graphics</span>
                     </div>
-                    <a href="#" class="project-link">View Project →</a>
+                    <a href="#webgl" class="project-link">View Demo →</a>
                 </div>
             </div>
         </div>
@@ -130,19 +157,19 @@
                 <div class="skill-category">
                     <h3>Technical Skills</h3>
                     <div class="skill-list">
-                        <span class="skill-item">Skill 1</span>
-                        <span class="skill-item">Skill 2</span>
-                        <span class="skill-item">Skill 3</span>
-                        <span class="skill-item">Skill 4</span>
+                        <span class="skill-item">WebGL</span>
+                        <span class="skill-item">Shader Programming</span>
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">Browser APIs</span>
                     </div>
                 </div>
                 <div class="skill-category">
                     <h3>Tools & Technologies</h3>
                     <div class="skill-list">
-                        <span class="skill-item">Tool 1</span>
-                        <span class="skill-item">Tool 2</span>
-                        <span class="skill-item">Tool 3</span>
-                        <span class="skill-item">Tool 4</span>
+                        <span class="skill-item">WebGL</span>
+                        <span class="skill-item">Canvas API</span>
+                        <span class="skill-item">Responsive Design</span>
+                        <span class="skill-item">Performance Optimization</span>
                     </div>
                 </div>
             </div>
