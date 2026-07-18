@@ -25,8 +25,45 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: var(--text-primary);
-    background-color: var(--bg-primary);
+    background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(139, 92, 246, 0.16), transparent 32%),
+        linear-gradient(135deg, #f7f9ff 0%, #eef4ff 45%, #fdf7ff 100%);
     scroll-behavior: smooth;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    width: 26rem;
+    height: 26rem;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.45;
+}
+
+body::before {
+    top: -8rem;
+    left: -10rem;
+    background: rgba(37, 99, 235, 0.14);
+}
+
+body::after {
+    right: -8rem;
+    bottom: -7rem;
+    background: rgba(168, 85, 247, 0.14);
+}
+
+.navbar,
+.container,
+section {
+    position: relative;
+    z-index: 1;
 }
 
 .container {
@@ -230,7 +267,8 @@ section {
 
 /* Highlights Section */
 .highlights-section {
-    background-color: var(--bg-secondary);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(241, 247, 255, 0.76));
+    border-top: 1px solid rgba(255, 255, 255, 0.7);
 }
 
 .highlights-grid {
@@ -240,12 +278,13 @@ section {
 }
 
 .highlight-card {
-    background: white;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(239, 245, 255, 0.95));
     padding: 2.5rem;
-    border-radius: 12px;
+    border-radius: 16px;
     box-shadow: var(--shadow-md);
     text-align: center;
     transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.7);
 }
 
 .highlight-card:hover {
@@ -271,17 +310,21 @@ section {
 /* Projects Section */
 .projects-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
 }
 
 .project-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(241, 247, 255, 0.95));
+    padding: 1.5rem 1.75rem;
+    border-radius: 16px;
     box-shadow: var(--shadow-md);
     transition: var(--transition);
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: stretch;
+    gap: 1.5rem;
+    min-height: 220px;
 }
 
 .project-card:hover {
@@ -290,17 +333,45 @@ section {
     border-color: var(--primary-color);
 }
 
+.project-card-content {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+}
+
+.project-card-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.project-card-media {
+    flex: 0 0 min(38%, 320px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .project-model {
-    margin-bottom: 1.25rem;
+    width: 100%;
     border-radius: 12px;
     overflow: hidden;
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
     border: 1px solid var(--border-color);
 }
 
+.project-card-media .project-model {
+    min-height: 220px;
+    height: 100%;
+}
+
 .project-model model-viewer {
     width: 100%;
-    height: 260px;
+    height: 100%;
+    min-height: 220px;
     display: block;
     background: transparent;
     position: relative;
@@ -398,13 +469,13 @@ model-viewer.is-ready .model-poster {
 
 .project-title {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     color: var(--text-primary);
 }
 
 .project-description {
     color: var(--text-secondary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
     line-height: 1.7;
 }
 
@@ -412,7 +483,7 @@ model-viewer.is-ready .model-poster {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
 }
 
 .tag {
@@ -437,38 +508,58 @@ model-viewer.is-ready .model-poster {
     transform: translateX(5px);
 }
 
-/* Skills Section */
+/* Skills & Certifications Section */
 .skills-section {
-    background-color: var(--bg-secondary);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(244, 248, 255, 0.76));
+    border-top: 1px solid rgba(255, 255, 255, 0.7);
 }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
 }
 
 .skill-category {
-    background: white;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(242, 247, 255, 0.95));
     padding: 2rem;
-    border-radius: 12px;
+    border-radius: 16px;
     box-shadow: var(--shadow-md);
+    border: 1px solid rgba(255, 255, 255, 0.7);
 }
 
-.skill-category h3 {
+.skill-heading-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.skill-heading-row h3 {
     font-size: 1.3rem;
-    margin-bottom: 1.5rem;
     color: var(--text-primary);
+}
+
+.skill-pill {
+    padding: 0.35rem 0.7rem;
+    background: var(--bg-tertiary);
+    color: var(--secondary-color);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
 .skill-list {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
+    margin-bottom: 1.25rem;
 }
 
 .skill-item {
-    padding: 0.6rem 1.2rem;
+    padding: 0.6rem 1rem;
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     color: white;
     border-radius: 25px;
@@ -482,56 +573,34 @@ model-viewer.is-ready .model-poster {
     box-shadow: var(--shadow-md);
 }
 
-/* Certifications Section */
 .certifications-list {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    max-width: 800px;
-    margin: 0 auto;
+    gap: 0.75rem;
 }
 
 .certification-item {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: var(--shadow-md);
-    border-left: 4px solid var(--primary-color);
-    transition: var(--transition);
-}
-
-.certification-item:hover {
-    transform: translateX(5px);
-    box-shadow: var(--shadow-lg);
+    background: var(--bg-secondary);
+    padding: 1rem 1.1rem;
+    border-radius: 10px;
+    border-left: 3px solid var(--primary-color);
 }
 
 .cert-title {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
     color: var(--text-primary);
 }
 
 .cert-issuer {
     color: var(--text-secondary);
-    margin-bottom: 1rem;
-}
-
-.cert-link {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 600;
-    transition: var(--transition);
-    display: inline-block;
-}
-
-.cert-link:hover {
-    color: var(--secondary-color);
-    transform: translateX(5px);
+    font-size: 0.95rem;
 }
 
 /* Research Section */
 .research-section {
-    background-color: var(--bg-secondary);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(247, 243, 255, 0.76));
+    border-top: 1px solid rgba(255, 255, 255, 0.7);
 }
 
 .research-grid {
@@ -541,12 +610,13 @@ model-viewer.is-ready .model-poster {
 }
 
 .research-card {
-    background: white;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(246, 242, 255, 0.95));
     padding: 2rem;
-    border-radius: 12px;
+    border-radius: 16px;
     box-shadow: var(--shadow-md);
     transition: var(--transition);
     position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.7);
 }
 
 .research-card:hover {
@@ -669,6 +739,21 @@ model-viewer.is-ready .model-poster {
         font-size: 2rem;
     }
 
+    .project-card {
+        flex-direction: column;
+        padding: 1.25rem;
+    }
+
+    .project-card-media {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .project-card-media .project-model,
+    .project-card-media .project-model model-viewer {
+        min-height: 220px;
+    }
+
     .projects-container {
         grid-template-columns: 1fr;
     }
@@ -707,5 +792,19 @@ model-viewer.is-ready .model-poster {
     .social-link {
         width: 200px;
         text-align: center;
+    }
+
+    .project-card {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .project-card-media .project-model,
+    .project-card-media .project-model model-viewer {
+        min-height: 180px;
+    }
+
+    .project-title {
+        font-size: 1.25rem;
     }
 }

@@ -95,116 +95,149 @@
         <div class="container">
             <h2 class="section-title">Projects</h2>
             <div class="projects-container">
-                <!-- Individual projects will be added here -->
                 <div class="project-card">
-                    <h3 class="project-title">Engineering Project 1</h3>
-                    <p class="project-description">Description of your engineering project. Add details about technologies used, challenges solved, and outcomes.</p>
-                    <div class="project-tags">
-                        <span class="tag">Engineering</span>
-                        <span class="tag">Technology</span>
+                    <div class="project-card-content">
+                        <div class="project-card-copy">
+                            <h3 class="project-title">Engineering Project 1</h3>
+                            <p class="project-description">Description of your engineering project. Add details about technologies used, challenges solved, and outcomes.</p>
+                            <div class="project-tags">
+                                <span class="tag">Engineering</span>
+                                <span class="tag">Technology</span>
+                            </div>
+                            <a href="#" class="project-link">View Project →</a>
+                        </div>
                     </div>
-                    <a href="#" class="project-link">View Project →</a>
                 </div>
                 <div class="project-card">
-                    <h3 class="project-title">Engineering Project 2</h3>
-                    <p class="project-description">Another project showcasing your engineering skills and problem-solving abilities.</p>
-                    <div class="project-tags">
-                        <span class="tag">Engineering</span>
-                        <span class="tag">Innovation</span>
+                    <div class="project-card-content">
+                        <div class="project-card-copy">
+                            <h3 class="project-title">Engineering Project 2</h3>
+                            <p class="project-description">Another project showcasing your engineering skills and problem-solving abilities.</p>
+                            <div class="project-tags">
+                                <span class="tag">Engineering</span>
+                                <span class="tag">Innovation</span>
+                            </div>
+                            <a href="#" class="project-link">View Project →</a>
+                        </div>
                     </div>
-                    <a href="#" class="project-link">View Project →</a>
                 </div>
-                <div class="project-card">
-                    <div class="project-model">
-                        <model-viewer
-                            id="cup-viewer"
-                            src="assets/ProjectFiles/MinorEntries/Cup/cup.glb"
-                            alt="Interactive 3D view of a China cup"
-                            shadow-intensity="1.5"
-                            interpolation-decay="200"
-                            camera-orbit="0deg 75deg 105%"
-                            field-of-view="30deg"
-                            touch-action="none"
-                            loading="eager"
-                            reveal="auto"
-                            style="background-color: #f8fafc;"
-                        >
-                            <div slot="poster" class="model-poster">
-                                <div class="poster-overlay">
-                                    <i class="fas fa-cube"></i>
-                                    <span>Loading 3D model…</span>
+                <div class="project-card project-card-featured">
+                    <div class="project-card-media">
+                        <div class="project-model">
+                            <model-viewer
+                                id="cup-viewer"
+                                src="assets/ProjectFiles/MinorEntries/Cup/cup.glb"
+                                alt="Interactive 3D view of a China cup"
+                                shadow-intensity="1.5"
+                                interpolation-decay="200"
+                                camera-orbit="0deg 75deg 105%"
+                                field-of-view="30deg"
+                                touch-action="none"
+                                loading="eager"
+                                reveal="auto"
+                                style="background-color: #f8fafc;"
+                            >
+                                <div slot="poster" class="model-poster">
+                                    <div class="poster-overlay">
+                                        <i class="fas fa-cube"></i>
+                                        <span>Loading 3D model…</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="model-controls">
-                                <button class="model-toggle-btn" type="button" title="Toggle interactive controls">
-                                    <i class="fas fa-play"></i>
-                                    <span>Explore 3D Design</span>
-                                </button>
-                                <button class="model-control-btn" type="button" title="Reset View">
-                                    <i class="fas fa-sync-alt"></i>
-                                </button>
-                            </div>
-                        </model-viewer>
+                                <div class="model-controls">
+                                    <button class="model-toggle-btn" type="button" title="Toggle interactive controls">
+                                        <i class="fas fa-play"></i>
+                                        <span>Explore 3D Design</span>
+                                    </button>
+                                    <button class="model-control-btn" type="button" title="Reset View">
+                                        <i class="fas fa-sync-alt"></i>
+                                    </button>
+                                </div>
+                            </model-viewer>
+                        </div>
                     </div>
-                    <h3 class="project-title">Design of a China cup</h3>
-                    <p class="project-description">This design study explores the balance between form, proportion, and craftsmanship in a traditional China cup. The model highlights the smooth curvature, refined rim, and elegant silhouette that make the object both functional and sculptural.</p>
-                    <div class="project-tags">
-                        <span class="tag">Engineering</span>
-                        <span class="tag">Design</span>
-                        <span class="tag">3D Model</span>
+                    <div class="project-card-content">
+                        <div class="project-card-copy">
+                            <h3 class="project-title">Design of a China cup</h3>
+                            <p class="project-description">This design study explores the balance between form, proportion, and craftsmanship in a traditional China cup. The model highlights the smooth curvature, refined rim, and elegant silhouette that make the object both functional and sculptural.</p>
+                            <div class="project-tags">
+                                <span class="tag">Engineering</span>
+                                <span class="tag">Design</span>
+                                <span class="tag">3D Model</span>
+                            </div>
+                            <a href="#" class="project-link">Rotate to inspect →</a>
+                        </div>
                     </div>
-                    <a href="#" class="project-link">Rotate to inspect →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills & Certifications Section -->
     <section id="skills" class="skills-section">
         <div class="container">
-            <h2 class="section-title">Skills</h2>
+            <h2 class="section-title">Skills & Certifications</h2>
+            <p class="section-subtitle">Each area of expertise is paired with the credentials that reinforce it.</p>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>Technical Skills</h3>
+                    <div class="skill-heading-row">
+                        <h3>Engineering Design</h3>
+                        <span class="skill-pill">Core Strength</span>
+                    </div>
                     <div class="skill-list">
-                        <span class="skill-item">Skill 1</span>
-                        <span class="skill-item">Skill 2</span>
-                        <span class="skill-item">Skill 3</span>
-                        <span class="skill-item">Skill 4</span>
+                        <span class="skill-item">CAD Modeling</span>
+                        <span class="skill-item">Product Design</span>
+                        <span class="skill-item">Prototype Development</span>
+                    </div>
+                    <div class="certifications-list">
+                        <div class="certification-item">
+                            <h4 class="cert-title">SolidWorks Associate</h4>
+                            <p class="cert-issuer">Dassault Systèmes</p>
+                        </div>
+                        <div class="certification-item">
+                            <h4 class="cert-title">AutoCAD Certified User</h4>
+                            <p class="cert-issuer">Autodesk</p>
+                        </div>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3>Tools & Technologies</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Tool 1</span>
-                        <span class="skill-item">Tool 2</span>
-                        <span class="skill-item">Tool 3</span>
-                        <span class="skill-item">Tool 4</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="certifications-section">
-        <div class="container">
-            <h2 class="section-title">Certifications</h2>
-            <div class="certifications-list">
-                <div class="certification-item">
-                    <h3 class="cert-title">Certification Name 1</h3>
-                    <p class="cert-issuer">Issuing Organization</p>
-                    <a href="#" class="cert-link" target="_blank">View Certificate →</a>
+                <div class="skill-category">
+                    <div class="skill-heading-row">
+                        <h3>Manufacturing & Systems</h3>
+                        <span class="skill-pill">Applied Practice</span>
+                    </div>
+                    <div class="skill-list">
+                        <span class="skill-item">Process Optimization</span>
+                        <span class="skill-item">Quality Control</span>
+                        <span class="skill-item">Systems Thinking</span>
+                    </div>
+                    <div class="certifications-list">
+                        <div class="certification-item">
+                            <h4 class="cert-title">Lean Six Sigma Yellow Belt</h4>
+                            <p class="cert-issuer">ASQ</p>
+                        </div>
+                        <div class="certification-item">
+                            <h4 class="cert-title">ISO 9001 Awareness</h4>
+                            <p class="cert-issuer">Internal Quality Training</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="certification-item">
-                    <h3 class="cert-title">Certification Name 2</h3>
-                    <p class="cert-issuer">Issuing Organization</p>
-                    <a href="#" class="cert-link" target="_blank">View Certificate →</a>
-                </div>
-                <div class="certification-item">
-                    <h3 class="cert-title">Certification Name 3</h3>
-                    <p class="cert-issuer">Issuing Organization</p>
-                    <a href="#" class="cert-link" target="_blank">View Certificate →</a>
+
+                <div class="skill-category">
+                    <div class="skill-heading-row">
+                        <h3>Digital Engineering</h3>
+                        <span class="skill-pill">Emerging Focus</span>
+                    </div>
+                    <div class="skill-list">
+                        <span class="skill-item">3D Visualization</span>
+                        <span class="skill-item">Simulation Workflows</span>
+                        <span class="skill-item">Interactive Media</span>
+                    </div>
+                    <div class="certifications-list">
+                        <div class="certification-item">
+                            <h4 class="cert-title">WebGL / 3D Interaction Basics</h4>
+                            <p class="cert-issuer">Project-Based Learning</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
