@@ -18,8 +18,11 @@ document.querySelectorAll('.nav-link').forEach(link => {
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return; // Do nothing for empty hash links
+        
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const target = document.querySelector(href);
         if (target) {
             const offsetTop = target.offsetTop - 80; // Account for fixed navbar
             window.scrollTo({
@@ -29,6 +32,44 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// 3D Model Control Logic
+const cupViewer = document.getElementById('cup-viewer');
+if (cupViewer) {
+    const toggleBtn = cupViewer.querySelector('.model-toggle-btn');
+    const resetBtn = cupViewer.querySelector('.model-control-btn');
+
+    toggleBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const isActive = toggleBtn.classList.toggle('active');
+        const label = toggleBtn.querySelector('span');
+        const icon = toggleBtn.querySelector('i');
+
+        if (isActive) {
+            cupViewer.setAttribute('camera-controls', '');
+            cupViewer.setAttribute('enable-pan', '');
+            cupViewer.setAttribute('interaction-prompt', 'none');
+            label.textContent = 'Interactive Mode';
+            icon.className = 'fas fa-unlock';
+        } else {
+            cupViewer.removeAttribute('camera-controls');
+            cupViewer.removeAttribute('enable-pan');
+            cupViewer.removeAttribute('interaction-prompt');
+            label.textContent = 'Explore 3D Design';
+            icon.className = 'fas fa-play';
+        }
+    });
+
+    resetBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        cupViewer.cameraOrbit = '0deg 75deg 105%';
+        cupViewer.fieldOfView = '30deg';
+        cupViewer.cameraTarget = 'auto auto auto';
+    });
+}
 
 // Navbar background on scroll
 const navbar = document.getElementById('navbar');
