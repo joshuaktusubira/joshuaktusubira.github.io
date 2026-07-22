@@ -1,0 +1,31 @@
+[
+  {
+    "category": "Computer Aided Design",
+    "relativePath": "assets/certificates/CAD",
+    "certifications": [
+      { "name": "CSWA", "tags": ["mechanical design", "simulation", "sustainability"], "file": "CSWA.pdf" },
+      { "name": "CSWA-AM", "tags": [], "file": "CSWA-AM.pdf" },
+      { "name": "CSWA-E", "tags": [], "file": "CSWA-E.pdf" },
+      { "name": "CSWA-SD", "tags": [], "file": "CSWA-SD.pdf" }
+    ]
+  },
+  {
+    "category": "FEA",
+    "subcategories": [
+      {
+        "name": "Analysis of static mechanical systems",
+        "relativePath": "assets/certificates/FEA",
+        "certifications": [
+          { "name": "Introduction to Ansys Mechanical", "tags": [], "file": "Intro to Ansys Mechanical.pdf" }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "ML",
+    "relativePath": "assets/certificates/ML",
+    "certifications": [
+      { "name": "Intro to machine learning", "tags": [], "file": "intro to ML- kaggle.pdf" }
+    ]
+  }
+]
