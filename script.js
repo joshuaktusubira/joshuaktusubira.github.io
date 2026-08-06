@@ -133,7 +133,15 @@ function createCertificateItem(cert, basePath) {
     }
 
     const thumb = document.createElement('div');
-    if (cert.file) {
+    if (cert.logo) {
+        thumb.className = 'cert-thumb cert-thumb-logo';
+        const logoImg = document.createElement('img');
+        logoImg.src = cert.logo;
+        logoImg.alt = `${cert.name} logo`;
+        logoImg.className = 'cert-logo-img';
+        logoImg.loading = 'lazy';
+        thumb.appendChild(logoImg);
+    } else if (cert.file) {
         thumb.className = 'cert-thumb';
         const previewFrame = document.createElement('iframe');
         previewFrame.className = 'cert-thumb-frame';

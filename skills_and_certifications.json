@@ -6,22 +6,26 @@
       {
         "name": "CSWA Mechanical Design",
         "tags": [],
-        "file": "CSWA.pdf"
+        "file": "CSWA.pdf",
+        "logo": "assets/certificates/FaviconsForCertificationCompanies/certified-solidworks-associate-cswa-badge.png"
       },
       {
         "name": "CSWA Additive Manufacturing",
         "tags": [],
-        "file": "CSWA-AM.pdf"
+        "file": "CSWA-AM.pdf",
+        "logo": "assets/certificates/FaviconsForCertificationCompanies/certified-solidworks-associate-cswa-badge.png"
       },
       {
         "name": "CSWA Electrical",
         "tags": [],
-        "file": "CSWA-E.pdf"
+        "file": "CSWA-E.pdf",
+        "logo": "assets/certificates/FaviconsForCertificationCompanies/certified-solidworks-associate-cswa-badge.png"
       },
       {
         "name": "CSWA Sustainable Design",
         "tags": [],
-        "file": "CSWA-SD.pdf"
+        "file": "CSWA-SD.pdf",
+        "logo": "assets/certificates/FaviconsForCertificationCompanies/certified-solidworks-associate-cswa-badge.png"
       }
     ]
   },
@@ -32,7 +36,8 @@
       {
         "name": "Introduction to Ansys Mechanical",
         "tags": [],
-        "file": "Intro to Ansys Mechanical.pdf"
+        "file": "Intro to Ansys Mechanical.pdf",
+        "logo": "assets/certificates/FaviconsForCertificationCompanies/GettingStartedAnsysMechanicalFavicon.png"
       }
     ]
   },
