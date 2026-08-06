@@ -34,10 +34,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // 3D Model Control Logic
-const cupViewer = document.getElementById('cup-viewer');
-if (cupViewer) {
-    const toggleBtn = cupViewer.querySelector('.model-toggle-btn');
-    const resetBtn = cupViewer.querySelector('.model-control-btn');
+function setupModelViewer(viewer) {
+    if (!viewer) return;
+    const toggleBtn = viewer.querySelector('.model-toggle-btn');
+    const resetBtn = viewer.querySelector('.model-control-btn');
 
     toggleBtn?.addEventListener('click', (e) => {
         e.preventDefault();
@@ -48,15 +48,15 @@ if (cupViewer) {
         const icon = toggleBtn.querySelector('i');
 
         if (isActive) {
-            cupViewer.setAttribute('camera-controls', '');
-            cupViewer.setAttribute('enable-pan', '');
-            cupViewer.setAttribute('interaction-prompt', 'none');
+            viewer.setAttribute('camera-controls', '');
+            viewer.setAttribute('enable-pan', '');
+            viewer.setAttribute('interaction-prompt', 'none');
             label.textContent = 'Interactive Mode';
             icon.className = 'fas fa-unlock';
         } else {
-            cupViewer.removeAttribute('camera-controls');
-            cupViewer.removeAttribute('enable-pan');
-            cupViewer.removeAttribute('interaction-prompt');
+            viewer.removeAttribute('camera-controls');
+            viewer.removeAttribute('enable-pan');
+            viewer.removeAttribute('interaction-prompt');
             label.textContent = 'Explore 3D Design';
             icon.className = 'fas fa-play';
         }
@@ -65,11 +65,14 @@ if (cupViewer) {
     resetBtn?.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        cupViewer.cameraOrbit = '0deg 75deg 105%';
-        cupViewer.fieldOfView = '30deg';
-        cupViewer.cameraTarget = 'auto auto auto';
+        viewer.cameraOrbit = '0deg 75deg 105%';
+        viewer.fieldOfView = '30deg';
+        viewer.cameraTarget = 'auto auto auto';
     });
 }
+
+const existingViewers = document.querySelectorAll('model-viewer');
+existingViewers.forEach(setupModelViewer);
 
 // Navbar background on scroll
 const navbar = document.getElementById('navbar');
@@ -115,39 +118,52 @@ function observeElements(elements) {
 observeElements(document.querySelectorAll('section, .project-card, .highlight-card, .skill-category, .certification-item, .research-card'));
 
 function createCertificateItem(cert, basePath) {
-    const item = document.createElement('div');
+    const item = document.createElement(cert.file ? 'a' : 'div');
     item.className = 'certification-item';
+    
+    if (cert.file) {
+        item.href = `${basePath}/${cert.file}`;
+        item.target = '_blank';
+        item.rel = 'noopener noreferrer';
+        item.setAttribute('aria-label', `Open ${cert.name}`);
+    }
+
+    if (cert.inProgress) {
+        item.classList.add('in-progress');
+    }
+
+    const thumb = document.createElement('div');
+    if (cert.file) {
+        thumb.className = 'cert-thumb';
+        const previewFrame = document.createElement('iframe');
+        previewFrame.className = 'cert-thumb-frame';
+        previewFrame.src = `${basePath}/${cert.file}#page=1&view=FitH`;
+        previewFrame.title = cert.name;
+        previewFrame.loading = 'lazy';
+        previewFrame.setAttribute('scrolling', 'no');
+        thumb.appendChild(previewFrame);
+    } else {
+        thumb.className = 'cert-thumb cert-thumb-pending';
+        const icon = document.createElement('i');
+        icon.className = 'fas fa-clock';
+        thumb.appendChild(icon);
+    }
+    item.appendChild(thumb);
+
+    const content = document.createElement('div');
+    content.className = 'cert-content';
 
     const certTitle = document.createElement('h4');
     certTitle.className = 'cert-title';
     certTitle.textContent = cert.name;
-    item.appendChild(certTitle);
+    content.appendChild(certTitle);
 
-    const certLink = document.createElement('a');
-    certLink.className = 'cert-link';
-    certLink.href = `${basePath}/${cert.file}`;
-    certLink.target = '_blank';
-    certLink.rel = 'noopener noreferrer';
-    certLink.setAttribute('aria-label', `Open ${cert.name}`);
-
-    const thumb = document.createElement('div');
-    thumb.className = 'cert-thumb';
-
-    const previewFrame = document.createElement('iframe');
-    previewFrame.className = 'cert-thumb-frame';
-    previewFrame.src = `${basePath}/${cert.file}#page=1&view=FitH`;
-    previewFrame.title = cert.name;
-    previewFrame.loading = 'lazy';
-    previewFrame.setAttribute('scrolling', 'no');
-    thumb.appendChild(previewFrame);
-
-    const thumbLabel = document.createElement('span');
-    thumbLabel.className = 'cert-thumb-label';
-    thumbLabel.textContent = 'View certificate';
-    thumb.appendChild(thumbLabel);
-
-    certLink.appendChild(thumb);
-    item.appendChild(certLink);
+    if (!cert.file) {
+        const pendingLabel = document.createElement('span');
+        pendingLabel.className = 'cert-pending-text';
+        pendingLabel.textContent = 'Credential pending';
+        content.appendChild(pendingLabel);
+    }
 
     if (cert.tags && cert.tags.length) {
         const tagsRow = document.createElement('div');
@@ -158,8 +174,10 @@ function createCertificateItem(cert, basePath) {
             tagChip.textContent = tag;
             tagsRow.appendChild(tagChip);
         });
-        item.appendChild(tagsRow);
+        content.appendChild(tagsRow);
     }
+
+    item.appendChild(content);
 
     return item;
 }
@@ -296,3 +314,96 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Iteratively load CubeSat 3D Models
+const cubeSatModels = [
+    {
+        id: "cubesat-2x3x4",
+        title: "CubeSat Chassis 2x3x4",
+        src: "assets/ProjectFiles/MinorEntries/CubeSAT frame designs/sat_chasis_2x3x4.glb",
+        description: "A 2x3x4 CubeSat frame design ready for deployment.",
+        tags: ["Engineering", "Space", "3D Model"]
+    },
+    {
+        id: "cubesat-2x6x4",
+        title: "CubeSat Chassis 2x6x4",
+        src: "assets/ProjectFiles/MinorEntries/CubeSAT frame designs/sat_chasis_2x6x4.glb",
+        description: "An extended 2x6x4 CubeSat frame designed for additional payload capacity.",
+        tags: ["Engineering", "Space", "3D Model"]
+    },
+    {
+        id: "cubesat-4x6",
+        title: "CubeSat Chassis 4x6",
+        src: "assets/ProjectFiles/MinorEntries/CubeSAT frame designs/sat_chasis_4x6.glb",
+        description: "A robust 4x6 CubeSat frame architecture for versatile missions.",
+        tags: ["Engineering", "Space", "3D Model"]
+    }
+];
+
+const projectsContainer = document.querySelector('.projects-container');
+
+if (projectsContainer) {
+    cubeSatModels.forEach(model => {
+        const card = document.createElement('div');
+        card.className = 'project-card project-card-featured';
+        
+        const tagsHtml = model.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+        
+        card.innerHTML = `
+            <div class="project-card-media">
+                <div class="project-model">
+                    <model-viewer
+                        id="${model.id}"
+                        src="${model.src}"
+                        alt="Interactive 3D view of ${model.title}"
+                        shadow-intensity="1.5"
+                        interpolation-decay="200"
+                        camera-orbit="0deg 75deg 105%"
+                        field-of-view="30deg"
+                        touch-action="none"
+                        loading="eager"
+                        reveal="auto"
+                        style="background-color: #f8fafc;"
+                    >
+                        <div slot="poster" class="model-poster">
+                            <div class="poster-overlay">
+                                <i class="fas fa-cube"></i>
+                                <span>Loading 3D model…</span>
+                            </div>
+                        </div>
+                        <div class="model-controls">
+                            <button class="model-toggle-btn" type="button" title="Toggle interactive controls">
+                                <i class="fas fa-play"></i>
+                                <span>Explore 3D Design</span>
+                            </button>
+                            <button class="model-control-btn" type="button" title="Reset View">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                        </div>
+                    </model-viewer>
+                </div>
+            </div>
+            <div class="project-card-content">
+                <div class="project-card-copy">
+                    <h3 class="project-title">${model.title}</h3>
+                    <p class="project-description">${model.description}</p>
+                    <div class="project-tags">
+                        ${tagsHtml}
+                    </div>
+                    <a href="#" class="project-link">Rotate to inspect →</a>
+                </div>
+            </div>
+        `;
+        
+        projectsContainer.appendChild(card);
+        
+        const viewer = card.querySelector('model-viewer');
+        if (typeof setupModelViewer === 'function') {
+            setupModelViewer(viewer);
+        }
+        
+        if (typeof observeElements === 'function') {
+            observeElements([card]);
+        }
+    });
+}
