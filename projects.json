@@ -1,0 +1,42 @@
+[
+  {
+    "id": "cup-viewer",
+    "title": "Design of a China Cup",
+    "description": "This design study explores the balance between form, proportion, and craftsmanship in a traditional China cup. The model highlights the smooth curvature, refined rim, and elegant silhouette that make the object both functional and sculptural.",
+    "tags": ["Engineering", "Design", "3D Model"],
+    "model": "assets/ProjectFiles/MinorEntries/Cup/cup.glb",
+    "cameraOrbit": "0deg 75deg 105%",
+    "fieldOfView": "30deg",
+    "link": null
+  },
+  {
+    "id": "cubesat-2x3x4",
+    "title": "CubeSat Chassis 2×3×4",
+    "description": "A compact 2×3×4 CubeSat frame engineered in SolidWorks for low-Earth orbit deployment. The design balances structural rigidity with minimal mass, using aluminium alloy profiles sized to standard CubeSat unit (U) specifications.",
+    "tags": ["Engineering", "Space", "3D Model"],
+    "model": "assets/ProjectFiles/MinorEntries/CubeSAT frame designs/sat_chasis_2x3x4.glb",
+    "cameraOrbit": "0deg 75deg 105%",
+    "fieldOfView": "30deg",
+    "link": null
+  },
+  {
+    "id": "cubesat-2x6x4",
+    "title": "CubeSat Chassis 2×6×4",
+    "description": "An extended 2×6×4 CubeSat frame designed for increased payload capacity. The elongated bay accommodates additional PCB stacks or sensor arrays while maintaining compatibility with standard dispensers.",
+    "tags": ["Engineering", "Space", "3D Model"],
+    "model": "assets/ProjectFiles/MinorEntries/CubeSAT frame designs/sat_chasis_2x6x4.glb",
+    "cameraOrbit": "0deg 75deg 105%",
+    "fieldOfView": "30deg",
+    "link": null
+  },
+  {
+    "id": "cubesat-4x6",
+    "title": "CubeSat Chassis 4×6",
+    "description": "A robust 4×6 CubeSat chassis architecture designed for versatile multi-payload missions. The wider cross-section enables side-panel solar array integration and provides additional mounting rails for attitude-determination hardware.",
+    "tags": ["Engineering", "Space", "3D Model"],
+    "model": "assets/ProjectFiles/MinorEntries/CubeSAT frame designs/sat_chasis_4x6.glb",
+    "cameraOrbit": "0deg 75deg 105%",
+    "fieldOfView": "30deg",
+    "link": null
+  }
+]

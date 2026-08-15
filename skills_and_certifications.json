@@ -5,37 +5,45 @@
     "certifications": [
       {
         "name": "CSWA Mechanical Design",
-        "tags": [],
+        "tags": ["SolidWorks", "CAD", "Mechanical"],
         "file": "CSWA.pdf",
-        "logo": "assets/certificates/FaviconsForCertificationCompanies/certified-solidworks-associate-cswa-badge.png"
+        "logo": "assets/certificates/FaviconsForCertificationCompanies/certified-solidworks-associate-cswa-badge.png",
+        "group": "CSWA",
+        "issuer": "Dassault Systèmes / SolidWorks"
       },
       {
         "name": "CSWA Additive Manufacturing",
-        "tags": [],
+        "tags": ["SolidWorks", "3D Printing", "Additive"],
         "file": "CSWA-AM.pdf",
-        "logo": "assets/certificates/FaviconsForCertificationCompanies/certified-solidworks-associate-cswa-badge.png"
+        "logo": "assets/certificates/FaviconsForCertificationCompanies/certified-solidworks-associate-cswa-badge.png",
+        "group": "CSWA",
+        "issuer": "Dassault Systèmes / SolidWorks"
       },
       {
-        "name": "CSWA Electrical",
-        "tags": [],
+        "name": "CSWA Electrical Design",
+        "tags": ["SolidWorks", "Electrical", "PCB"],
         "file": "CSWA-E.pdf",
-        "logo": "assets/certificates/FaviconsForCertificationCompanies/certified-solidworks-associate-cswa-badge.png"
+        "logo": "assets/certificates/FaviconsForCertificationCompanies/certified-solidworks-associate-cswa-badge.png",
+        "group": "CSWA",
+        "issuer": "Dassault Systèmes / SolidWorks"
       },
       {
         "name": "CSWA Sustainable Design",
-        "tags": [],
+        "tags": ["SolidWorks", "Sustainability", "Lifecycle"],
         "file": "CSWA-SD.pdf",
-        "logo": "assets/certificates/FaviconsForCertificationCompanies/certified-solidworks-associate-cswa-badge.png"
+        "logo": "assets/certificates/FaviconsForCertificationCompanies/certified-solidworks-associate-cswa-badge.png",
+        "group": "CSWA",
+        "issuer": "Dassault Systèmes / SolidWorks"
       }
     ]
   },
   {
-    "category": "Simulation",
+    "category": "Simulation & FEA",
     "relativePath": "assets/certificates/FEA",
     "certifications": [
       {
         "name": "Introduction to Ansys Mechanical",
-        "tags": [],
+        "tags": ["FEA", "Ansys", "Simulation"],
         "file": "Intro to Ansys Mechanical.pdf",
         "logo": "assets/certificates/FaviconsForCertificationCompanies/GettingStartedAnsysMechanicalFavicon.png"
       }
@@ -47,12 +55,12 @@
     "certifications": [
       {
         "name": "Intro to Machine Learning",
-        "tags": [],
+        "tags": ["Python", "ML", "Kaggle"],
         "file": "intro to ML- kaggle.pdf"
       },
       {
         "name": "Intermediate C++",
-        "tags": [],
+        "tags": ["C++", "Programming"],
         "file": "",
         "inProgress": true
       }

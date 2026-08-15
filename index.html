@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joshua K. Tusubira | Engineering Student</title>
+    <meta name="description" content="Portfolio of Joshua Kiboigo Tusubira — an engineering student passionate about CAD, simulation, CubeSat design, and innovative problem-solving.">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,8 +28,7 @@
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#highlights" class="nav-link">Highlights</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#skills" class="nav-link">Skills &amp; Certs</a></li>
                 <li><a href="#research" class="nav-link">Research</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
@@ -44,27 +44,34 @@
     <section id="about" class="about-section">
         <div class="container">
             <div class="about-content">
-                <h1 class="greeting">Hello, welcome to my site</h1>
-                <h2 class="name-tagline">Joshua Kiboigo Tusubira is my name and tinkering is my game 😊</h2>
-                <p class="about-text">
-                    I'm an engineer passionate about building innovative solutions and exploring new technologies.
-                    This portfolio showcases my projects, skills, and ongoing research in engineering.
-                </p>
-                <div class="social-links" id="social-links">
-                    <a href="https://www.linkedin.com/in/joshua-kiboigo-tusubira-4536212a5" class="social-link"
-                        aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/joshuaktusubira/" class="social-link" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                        <span>GitHub</span>
-                    </a>
-                    <a href="https://drive.google.com/file/d/1EMKMebrz-EvfJ4EsJF02unLHbhq4mezh/view?usp=sharing"
-                        class="social-link" aria-label="Resume" id="cv-link">
-                        <i class="fas fa-file-pdf"></i>
-                        <span>Resume</span>
-                    </a>
+                <div class="hero-layout">
+                    <div class="hero-text">
+                        <h1 class="greeting">Hello, welcome to my site</h1>
+                        <h2 class="name-tagline">Joshua Kiboigo Tusubira is my name and tinkering is my game 😊</h2>
+                        <p class="about-text">
+                            I'm an engineer passionate about building innovative solutions and exploring new technologies.
+                            This portfolio showcases my projects, skills, and ongoing research in engineering.
+                        </p>
+                        <div class="social-links" id="social-links">
+                            <a href="https://www.linkedin.com/in/joshua-kiboigo-tusubira-4536212a5" class="social-link"
+                                aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://github.com/joshuaktusubira/" class="social-link" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://drive.google.com/file/d/1EMKMebrz-EvfJ4EsJF02unLHbhq4mezh/view?usp=sharing"
+                                class="social-link" aria-label="Resume" id="cv-link">
+                                <i class="fas fa-file-pdf"></i>
+                                <span>Resume</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-photo-wrap">
+                        <img src="assets/pictures/1776970904349-p.png" alt="Joshua Kiboigo Tusubira" class="hero-photo">
+                    </div>
                 </div>
             </div>
         </div>
@@ -75,20 +82,20 @@
         <div class="container">
             <h2 class="section-title">Highlights</h2>
             <div class="highlights-grid">
-                <div class="highlight-card">
+                <div class="highlight-card highlight-card--blue">
                     <div class="highlight-icon">🚀</div>
-                    <h3>Featured Project</h3>
-                    <p>Check out my latest engineering project</p>
+                    <h3>CubeSat Chassis Design</h3>
+                    <p>Engineered 4 CubeSat frame configurations — 2×3×4, 2×6×4, and 4×6 — in SolidWorks, ready for deployment in low-Earth orbit missions.</p>
                 </div>
-                <div class="highlight-card">
+                <div class="highlight-card highlight-card--gold">
                     <div class="highlight-icon">🏆</div>
-                    <h3>Achievements</h3>
-                    <p>Recent accomplishments and milestones</p>
+                    <h3>4× CSWA Certified</h3>
+                    <p>Certified SolidWorks Associate across Mechanical Design, Additive Manufacturing, Electrical Design, and Sustainable Design.</p>
                 </div>
-                <div class="highlight-card">
+                <div class="highlight-card highlight-card--purple">
                     <div class="highlight-icon">💡</div>
-                    <h3>Innovation</h3>
-                    <p>Creative solutions to complex problems</p>
+                    <h3>Simulation &amp; ML Explorer</h3>
+                    <p>Completed Ansys Mechanical FEA and Kaggle Machine Learning certifications. Currently pursuing Intermediate C++ to deepen embedded-systems capability.</p>
                 </div>
             </div>
         </div>
@@ -98,48 +105,8 @@
     <section id="projects" class="projects-section">
         <div class="container">
             <h2 class="section-title">Projects</h2>
-            <div class="projects-container">
-                <div class="project-card project-card-featured">
-                    <div class="project-card-media">
-                        <div class="project-model">
-                            <model-viewer id="cup-viewer" src="assets/ProjectFiles/MinorEntries/Cup/cup.glb"
-                                alt="Interactive 3D view of a China cup" shadow-intensity="1.5"
-                                interpolation-decay="200" camera-orbit="0deg 75deg 105%" field-of-view="30deg"
-                                touch-action="none" loading="eager" reveal="auto" style="background-color: #f8fafc;">
-                                <div slot="poster" class="model-poster">
-                                    <div class="poster-overlay">
-                                        <i class="fas fa-cube"></i>
-                                        <span>Loading 3D model…</span>
-                                    </div>
-                                </div>
-                                <div class="model-controls">
-                                    <button class="model-toggle-btn" type="button" title="Toggle interactive controls">
-                                        <i class="fas fa-play"></i>
-                                        <span>Explore 3D Design</span>
-                                    </button>
-                                    <button class="model-control-btn" type="button" title="Reset View">
-                                        <i class="fas fa-sync-alt"></i>
-                                    </button>
-                                </div>
-                            </model-viewer>
-                        </div>
-                    </div>
-                    <div class="project-card-content">
-                        <div class="project-card-copy">
-                            <h3 class="project-title">Design of a China cup</h3>
-                            <p class="project-description">This design study explores the balance between form,
-                                proportion, and craftsmanship in a traditional China cup. The model highlights the
-                                smooth curvature, refined rim, and elegant silhouette that make the object both
-                                functional and sculptural.</p>
-                            <div class="project-tags">
-                                <span class="tag">Engineering</span>
-                                <span class="tag">Design</span>
-                                <span class="tag">3D Model</span>
-                            </div>
-                            <a href="#" class="project-link">Rotate to inspect →</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="projects-container" id="projects-container" aria-live="polite">
+                <p class="skills-loading">Loading projects…</p>
             </div>
         </div>
     </section>
@@ -147,7 +114,7 @@
     <!-- Skills & Certifications Section -->
     <section id="skills" class="skills-section">
         <div class="container">
-            <h2 class="section-title">Skills & Certifications</h2>
+            <h2 class="section-title">Skills &amp; Certifications</h2>
             <p class="section-subtitle">Each area of expertise is paired with the credentials that reinforce it.</p>
             <div class="skills-grid" id="skills-grid" aria-live="polite">
                 <p class="skills-loading">Loading certifications…</p>
@@ -158,19 +125,10 @@
     <!-- Running Projects / Research / Curiosity Section -->
     <section id="research" class="research-section">
         <div class="container">
-            <h2 class="section-title">Running Projects & Research</h2>
+            <h2 class="section-title">Running Projects &amp; Research</h2>
             <p class="section-subtitle">Current explorations and ongoing work</p>
-            <div class="research-grid">
-                <div class="research-card">
-                    <h3>Research Project 1</h3>
-                    <p>Description of your ongoing research or curiosity-driven project.</p>
-                    <span class="status-badge">In Progress</span>
-                </div>
-                <div class="research-card">
-                    <h3>Research Project 2</h3>
-                    <p>Another area of exploration or investigation you're working on.</p>
-                    <span class="status-badge">In Progress</span>
-                </div>
+            <div class="research-grid" id="research-grid" aria-live="polite">
+                <p class="skills-loading">Loading research…</p>
             </div>
         </div>
     </section>
@@ -178,19 +136,32 @@
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="contact-text">Feel free to reach out for collaborations or inquiries.</p>
-            <a href="mailto:joshuaktusubira@gmail.com" class="contact-button">
-                <i class="fas fa-envelope"></i>
-                <span>joshuaktusubira@gmail.com</span>
-            </a>
+            <div class="contact-card">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="contact-text">Open to internships, engineering collaborations, and research opportunities.<br>Feel free to reach out — I'd love to connect.</p>
+                <a href="mailto:joshuaktusubira@gmail.com" class="contact-button">
+                    <i class="fas fa-envelope"></i>
+                    <span>joshuaktusubira@gmail.com</span>
+                </a>
+                <div class="contact-socials">
+                    <a href="https://www.linkedin.com/in/joshua-kiboigo-tusubira-4536212a5" class="contact-social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/joshuaktusubira/" class="contact-social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1EMKMebrz-EvfJ4EsJF02unLHbhq4mezh/view?usp=sharing" class="contact-social-link" aria-label="Resume">
+                        <i class="fas fa-file-pdf"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 JKT. Built with HTML, CSS & JavaScript.</p>
+            <p>&copy; 2026 Joshua Kiboigo Tusubira. Built with HTML, CSS & JavaScript.</p>
         </div>
     </footer>
 
