@@ -12,7 +12,42 @@
     "description": "Investigating lifecycle assessment methodologies and eco-design principles — inspired by CSWA Sustainable Design — with a focus on reducing embodied carbon in manufactured components through material selection and design-for-disassembly strategies.",
     "status": "In Progress",
     "link": null
-  }
+  },
+  {
+    "icon": "🛠️",
+    "title": "Design for Manufacturability",
+    "description": "Exploring design-for-manufacturability (DFM) principles to optimize component geometry, tolerances, and assembly processes — aiming to reduce production costs and improve yield in small-batch manufacturing.",
+    "status": "In Progress",
+    "link": null
+  },
+  {
+    "icon": "🔬",
+    "title": "Material Characterization of Composites",
+    "description": "Conducting experimental testing and analysis of composite materials to determine mechanical properties, failure modes, and environmental durability — informing material selection for aerospace and automotive applications.",
+    "status": "In Progress",
+    "link": null
+  },
+  {
+    "icon": "📐",
+    "title": "Parametric Design Optimization",
+    "description": "Utilizing parametric modeling techniques to explore design variations and optimize performance metrics such as weight, strength, and aerodynamics — leveraging computational tools for rapid iteration.",
+    "status": "In Progress",
+    "link": null
+  },
+  {
+    "icon": "🌱",
+    "title": "Sustainable Packaging Solutions",
+    "description": "Researching biodegradable materials and innovative packaging designs to minimize environmental impact — focusing on reducing plastic waste and improving recyclability in consumer products.",
+    "status": "In Progress",
+    "link": "https://www.linkedin.com/in/joshuaktusubira"
+  },
+  {
+    "icon": "🛠️",
+    "title": "Additive Manufacturing Process Development",
+    "description": "Investigating additive manufacturing techniques for complex geometries, including process parameter optimization, material selection, and post-processing methods to enhance part quality and performance.",
+    "status": "In Progress",
+    "link": null
+  },
   {
     "icon": "🌱",
     "title": "Structural Analysis of a Hanger",
