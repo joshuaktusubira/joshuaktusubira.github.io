@@ -46,6 +46,12 @@
         "tags": ["FEA", "Ansys", "Simulation"],
         "file": "Intro to Ansys Mechanical.pdf",
         "logo": "assets/certificates/FaviconsForCertificationCompanies/GettingStartedAnsysMechanicalFavicon.png"
+      },
+      {
+        "name": "Foundations in Stress Analysis of Structures",
+        "tags": ["FEA", "Ansys", "Simulation", "Study Track"],
+        "file": "https://innovation.ansys.com/badges/badge/Zm91bmRhdGlvbnMtaW4tc3RyZXNzLWFuYWx5c2lzLW9mLXN0cnVjdHVyZXMtMTE5Mg==",
+        "logo": "assets/certificates/FaviconsForCertificationCompanies/AnsysFoundationsInStressAnalysisOfStructures.png"
       }
     ]
   },
@@ -56,7 +62,8 @@
       {
         "name": "Intro to Machine Learning",
         "tags": ["Python", "ML", "Kaggle"],
-        "file": "intro to ML- kaggle.pdf"
+        "file": "intro to ML- kaggle.pdf",
+        "logo": "assets/certificates/FaviconsForCertificationCompanies/KaggleLogo.png"
       },
       {
         "name": "Intermediate C++",
