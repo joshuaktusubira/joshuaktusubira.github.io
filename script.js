@@ -273,12 +273,9 @@ async function loadResearch() {
 /* ============================================================
    CERTIFICATIONS — grouped accordion + individual items
    ============================================================ */
-function resolveCertUrl(basePath, file) {
-    try {
-        return new URL(file, window.location.href).href;
-    } catch {
-        return `${basePath}/${file}`;
-    }
+function resolveCertificationFile(file, basePath) {
+    if (/^https?:\/\//i.test(file)) return file;
+    return `${basePath}/${file}`;
 }
 
 function buildCertGroupAccordion(groupName, certs, basePath, logo) {
@@ -328,7 +325,7 @@ function buildCertGroupAccordion(groupName, certs, basePath, logo) {
         } else {
             const item = document.createElement('a');
             item.className  = 'cert-group-item';
-            item.href       = resolveCertUrl(basePath, cert.file);
+            item.href       = resolveCertificationFile(cert.file, basePath);
             item.target     = '_blank';
             item.rel        = 'noopener noreferrer';
             item.setAttribute('aria-label', `Open ${cert.name}`);
@@ -358,7 +355,7 @@ function buildCertItem(cert, basePath) {
     item.className = 'certification-item';
 
     if (cert.file) {
-        item.href   = resolveCertUrl(basePath, cert.file);
+        item.href   = resolveCertificationFile(cert.file, basePath);
         item.target = '_blank';
         item.rel    = 'noopener noreferrer';
         item.setAttribute('aria-label', `Open ${cert.name}`);
@@ -380,7 +377,7 @@ function buildCertItem(cert, basePath) {
         thumb.className = 'cert-thumb';
         const frame = document.createElement('iframe');
         frame.className = 'cert-thumb-frame';
-        frame.src       = `${resolveCertUrl(basePath, cert.file)}#page=1&view=FitH`;
+        frame.src       = `${resolveCertificationFile(cert.file, basePath)}#page=1&view=FitH`;
         frame.title     = cert.name;
         frame.loading   = 'lazy';
         frame.setAttribute('scrolling', 'no');
