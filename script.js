@@ -236,15 +236,38 @@ function buildResearchCard(item) {
     const card = document.createElement('div');
     card.className = 'research-card';
 
+    const iconValue = item.icon || item.favicon;
+    const tags = Array.isArray(item.tags)
+        ? item.tags
+        : typeof item.tags === 'string'
+            ? item.tags.split(',').map(tag => tag.trim()).filter(Boolean)
+            : [];
+    const tagsHtml = tags
+        .map(tag => `<span class="tag">${tag}</span>`)
+        .join('');
+    const icon = document.createElement('div');
+    icon.className = 'research-card-icon';
+
+    if (iconValue && (/^https?:\/\//i.test(iconValue) || /\.(png|jpe?g|gif|svg|webp|ico)(\?.*)?$/i.test(iconValue))) {
+        const image = document.createElement('img');
+        image.src = iconValue;
+        image.alt = `${item.title} favicon`;
+        image.loading = 'lazy';
+        icon.appendChild(image);
+    } else {
+        icon.textContent = iconValue || '🔬';
+    }
+
     const linkOpen  = item.link ? `<a href="${item.link}" target="_blank" rel="noopener noreferrer" class="research-card-link">` : '';
     const linkClose = item.link ? '</a>' : '';
 
     card.innerHTML = `
-        <div class="research-card-icon">${item.icon || '🔬'}</div>
         <h3>${item.title}</h3>
         <p>${item.description}</p>
+        ${tagsHtml ? `<div class="project-tags research-card-tags">${tagsHtml}</div>` : ''}
         ${linkOpen}<span class="status-badge">${item.status || 'In Progress'}</span>${linkClose}
     `;
+    card.prepend(icon);
 
     return card;
 }

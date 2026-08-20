@@ -1021,6 +1021,21 @@ model-viewer.is-ready .model-poster {
     margin-bottom: 0.9rem;
 }
 
+.research-card-icon img {
+    display: block;
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    object-position: center;
+    padding: 6px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+.research-card-tags {
+    margin-bottom: 1rem;
+}
+
 .research-card h3 {
     font-size: 1.25rem;
     margin-bottom: 0.75rem;
