@@ -151,13 +151,9 @@ function buildProjectCard(project) {
         .map(tag => `<span class="tag">${tag}</span>`)
         .join('');
 
-    const linkHtml = project.link
-        ? `<a href="${project.link}" target="_blank" rel="noopener noreferrer" class="project-link">View project →</a>`
-        : `<a href="#${project.id}" class="project-link">Rotate to inspect →</a>`;
-
-    card.innerHTML = `
-        <div class="project-card-media">
-            <div class="project-model">
+    const assets = project.assets || {};
+    const mediaHtml = project.model
+        ? `<div class="project-model">
                 <model-viewer
                     id="${project.id}"
                     src="${project.model}"
@@ -189,14 +185,41 @@ function buildProjectCard(project) {
                         </button>
                     </div>
                 </model-viewer>
-            </div>
+            </div>`
+        : assets.simulationGif
+            ? `<div class="project-model project-simulation">
+                    <img src="${assets.simulationGif}" alt="${assets.simulationAlt || `Simulation results for ${project.title}`}" loading="lazy">
+                    <span class="simulation-badge"><i class="fas fa-chart-line"></i> Simulation playback</span>
+                </div>`
+            : `<div class="project-model project-media-placeholder">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Simulation media coming soon</span>
+                </div>`;
+
+    const projectLinkHtml = project.link
+        ? `<a href="${project.link}" target="_blank" rel="noopener noreferrer" class="project-link">View project <i class="fas fa-arrow-up-right-from-square"></i></a>`
+        : project.model
+            ? `<a href="#${project.id}" class="project-link">Rotate to inspect <i class="fas fa-rotate"></i></a>`
+            : '';
+    const reportLinksHtml = [
+        assets.summaryReport
+            ? `<a href="${assets.summaryReport}" target="_blank" rel="noopener noreferrer" class="project-link">Read summary <i class="fas fa-file-lines"></i></a>`
+            : '',
+        assets.ansysReport
+            ? `<a href="${assets.ansysReport}" download class="project-link">Download Ansys report <i class="fas fa-download"></i></a>`
+            : ''
+    ].filter(Boolean).join('');
+
+    card.innerHTML = `
+        <div class="project-card-media">
+            ${mediaHtml}
         </div>
         <div class="project-card-content">
             <div class="project-card-copy">
                 <h3 class="project-title">${project.title}</h3>
                 <p class="project-description">${project.description}</p>
                 <div class="project-tags">${tagsHtml}</div>
-                ${linkHtml}
+                <div class="project-links">${projectLinkHtml}${reportLinksHtml}</div>
             </div>
         </div>
     `;
