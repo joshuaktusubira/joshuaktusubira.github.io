@@ -273,6 +273,14 @@ async function loadResearch() {
 /* ============================================================
    CERTIFICATIONS — grouped accordion + individual items
    ============================================================ */
+function resolveCertUrl(basePath, file) {
+    try {
+        return new URL(file, window.location.href).href;
+    } catch {
+        return `${basePath}/${file}`;
+    }
+}
+
 function buildCertGroupAccordion(groupName, certs, basePath, logo) {
     const wrapper = document.createElement('div');
     wrapper.className = 'cert-group';
@@ -320,7 +328,7 @@ function buildCertGroupAccordion(groupName, certs, basePath, logo) {
         } else {
             const item = document.createElement('a');
             item.className  = 'cert-group-item';
-            item.href       = `${basePath}/${cert.file}`;
+            item.href       = resolveCertUrl(basePath, cert.file);
             item.target     = '_blank';
             item.rel        = 'noopener noreferrer';
             item.setAttribute('aria-label', `Open ${cert.name}`);
@@ -350,7 +358,7 @@ function buildCertItem(cert, basePath) {
     item.className = 'certification-item';
 
     if (cert.file) {
-        item.href   = `${basePath}/${cert.file}`;
+        item.href   = resolveCertUrl(basePath, cert.file);
         item.target = '_blank';
         item.rel    = 'noopener noreferrer';
         item.setAttribute('aria-label', `Open ${cert.name}`);
@@ -372,7 +380,7 @@ function buildCertItem(cert, basePath) {
         thumb.className = 'cert-thumb';
         const frame = document.createElement('iframe');
         frame.className = 'cert-thumb-frame';
-        frame.src       = `${basePath}/${cert.file}#page=1&view=FitH`;
+        frame.src       = `${resolveCertUrl(basePath, cert.file)}#page=1&view=FitH`;
         frame.title     = cert.name;
         frame.loading   = 'lazy';
         frame.setAttribute('scrolling', 'no');
