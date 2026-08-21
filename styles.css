@@ -931,7 +931,7 @@ model-viewer.is-ready .model-poster {
 
 .cert-group-info {
     flex: 1;
-    min-width: 0;
+    min-width: max-content;
 }
 
 .cert-group-name {
@@ -1151,18 +1151,18 @@ model-viewer.is-ready .model-poster {
     text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: clamp(0.5rem, 3.5vw, 1rem);
     transition: var(--transition);
     box-shadow: var(--shadow-md);
 }
 
 .contact-button span {
-    min-width: 0;
+    min-width: max-content;
     white-space: nowrap;
 }
 
 .contact-button i {
-    font-size: 1.1rem;
+    font-size: 1.1em;
 }
 
 .contact-button:hover {
@@ -1394,7 +1394,6 @@ model-viewer.is-ready .model-poster {
         width: 100%;
         padding-left: 1rem;
         padding-right: 1rem;
-        font-size: 0.8rem;
     }
 
     .footer-inner {
@@ -1435,10 +1434,6 @@ model-viewer.is-ready .model-poster {
     .project-card-media .project-model,
     .project-card-media .project-model model-viewer {
         min-height: 180px;
-    }
-
-    .contact-button {
-        font-size: 0.72rem;
     }
 
     .project-simulation {
