@@ -439,6 +439,7 @@ section {
 .project-simulation {
     position: relative;
     min-height: 220px;
+    aspect-ratio: 16 / 10;
 }
 
 .project-simulation img {
@@ -446,7 +447,8 @@ section {
     height: 100%;
     min-height: 220px;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
+    background: #f8fafc;
 }
 
 .simulation-badge {
@@ -1139,7 +1141,9 @@ model-viewer.is-ready .model-poster {
 
 .contact-button {
     display: inline-flex;
+    max-width: 100%;
     align-items: center;
+    justify-content: center;
     gap: 0.75rem;
     padding: 0.9rem 2rem;
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
@@ -1150,6 +1154,11 @@ model-viewer.is-ready .model-poster {
     font-size: 1rem;
     transition: var(--transition);
     box-shadow: var(--shadow-md);
+}
+
+.contact-button span {
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
 .contact-button i {
@@ -1334,16 +1343,27 @@ model-viewer.is-ready .model-poster {
     .project-card {
         flex-direction: column;
         padding: 1.25rem;
+        min-width: 0;
     }
 
     .project-card-media {
         flex: 0 0 auto;
         width: 100%;
+        min-width: 0;
     }
 
     .project-card-media .project-model,
     .project-card-media .project-model model-viewer {
         min-height: 220px;
+    }
+
+    .project-simulation {
+        min-height: 0;
+        height: auto;
+    }
+
+    .project-simulation img {
+        min-height: 0;
     }
 
     .projects-container {
@@ -1368,6 +1388,12 @@ model-viewer.is-ready .model-poster {
 
     .contact-card {
         padding: 2rem 1.5rem;
+    }
+
+    .contact-button {
+        width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 
     .footer-inner {
@@ -1408,6 +1434,10 @@ model-viewer.is-ready .model-poster {
     .project-card-media .project-model,
     .project-card-media .project-model model-viewer {
         min-height: 180px;
+    }
+
+    .project-simulation {
+        min-height: 0;
     }
 
     .project-title {
