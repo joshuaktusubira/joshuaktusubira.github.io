@@ -1158,7 +1158,7 @@ model-viewer.is-ready .model-poster {
 
 .contact-button span {
     min-width: 0;
-    overflow-wrap: anywhere;
+    white-space: nowrap;
 }
 
 .contact-button i {
@@ -1394,6 +1394,7 @@ model-viewer.is-ready .model-poster {
         width: 100%;
         padding-left: 1rem;
         padding-right: 1rem;
+        font-size: 0.8rem;
     }
 
     .footer-inner {
@@ -1434,6 +1435,10 @@ model-viewer.is-ready .model-poster {
     .project-card-media .project-model,
     .project-card-media .project-model model-viewer {
         min-height: 180px;
+    }
+
+    .contact-button {
+        font-size: 0.72rem;
     }
 
     .project-simulation {
