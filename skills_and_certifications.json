@@ -45,13 +45,17 @@
         "name": "Introduction to Ansys Mechanical",
         "tags": ["FEA", "Ansys", "Simulation"],
         "file": "Intro to Ansys Mechanical.pdf",
-        "logo": "assets/certificates/FaviconsForCertificationCompanies/GettingStartedAnsysMechanicalFavicon.png"
+        "logo": "assets/certificates/FaviconsForCertificationCompanies/GettingStartedAnsysMechanicalFavicon.png",
+        "group": "Ansys Mechanical",
+        "issuer": "Ansys"
       },
       {
-        "name": "Foundations in Stress Analysis of Structures",
+        "name": "Foundations in Stress Analysis of Structures Study Track",
         "tags": ["FEA", "Ansys", "Simulation", "Study Track"],
         "file": "https://innovation.ansys.com/badges/badge/Zm91bmRhdGlvbnMtaW4tc3RyZXNzLWFuYWx5c2lzLW9mLXN0cnVjdHVyZXMtMTE5Mg==",
-        "logo": "assets/certificates/FaviconsForCertificationCompanies/AnsysFoundationsInStressAnalysisOfStructures.png"
+        "logo": "assets/certificates/FaviconsForCertificationCompanies/AnsysFoundationsInStressAnalysisOfStructures.png",
+        "group": "Ansys Mechanical",
+        "issuer": "Ansys"
       }
     ]
   },
